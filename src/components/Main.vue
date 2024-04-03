@@ -22,7 +22,12 @@ import { store } from '../assets/data/store';
 <template>
   <div class="container">
     <div class="row row-col-3">
-      <CardMovie v-for="movie in this.store.movieList" />
+      <CardMovie v-for="movie in this.store.movieList" 
+      :key="movie.id"
+      :title="movie.title"
+      :originalTitle="movie.originalTitle"
+      :originalLanguage="movie.originalLanguage"
+      :voteAverage="movie.voteAverage"/>
     </div>
   </div>
 
