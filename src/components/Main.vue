@@ -25,9 +25,9 @@ import { store } from '../assets/data/store';
       <CardMovie v-for="movie in this.store.movieList" 
       :key="movie.id"
       :title="movie.title"
-      :originalTitle="movie.originalTitle"
-      :originalLanguage="movie.originalLanguage"
-      :voteAverage="movie.voteAverage"/>
+      :originalTitle="movie.original_title"
+      :originalLanguage="movie.original_language"
+      :voteAverage="movie.vote_average.toFixed(1)"/>
     </div>
   </div>
 

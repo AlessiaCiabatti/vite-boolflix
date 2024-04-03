@@ -26,6 +26,7 @@ import axios from 'axios';
           console.log(result.data.results);
           this.store.movieList = result.data.results;
           console.log(this.store.movieList);
+          
         })
       }
     },
