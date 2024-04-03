@@ -38,7 +38,7 @@ import axios from 'axios';
 
 
 <template>
-  <Header />
+  <Header @starSearch="getApiMovie"/>
   <Main />
   <Footer />
 </template>
