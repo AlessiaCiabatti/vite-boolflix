@@ -1,7 +1,12 @@
 
 <script>
   export default {
-    
+    props:{
+      title: String,
+      originalTitle: String,
+      originalLanguage: String,
+      popularity: Number,
+    }
   }
 </script>
 

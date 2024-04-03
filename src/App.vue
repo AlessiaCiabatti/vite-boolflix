@@ -20,16 +20,18 @@ import axios from 'axios';
       }
     },
     methods:{
-      getApi(){
+      getApiMovie(){
         axios.get(this.store.apiUrlMovie)
         .then(result =>{
-          console.log(result.data.results)
+          console.log(result.data.results);
+          this.store.movieList = result.data.results;
+          console.log(this.store.movieList);
         })
       }
     },
 
     mounted(){
-      this.getApi()
+      this.getApiMovie()
     }
   }
 </script>
