@@ -6,13 +6,13 @@ import { store } from '../assets/data/store';
     data(){
       return{
         store,
-        nameToSearch: 'avengers',
+        nameToSearch: '',
       }
     },
     methods:{
       startSearch(){
         this.store.queryParams= {
-          query: this.nameToSearch
+          query: this.nameToSearch 
         }
         this.$emit('startSearch')
       }

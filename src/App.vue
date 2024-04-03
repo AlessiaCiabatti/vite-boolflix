@@ -21,7 +21,7 @@ import axios from 'axios';
     },
     methods:{
       getApiMovie(){
-        axios.get(this.store.apiUrlMovie)
+        axios.get(this.store.apiUrlMovie + `&query=${this.store.queryParams.query}`)
         .then(result =>{
           console.log(result.data.results);
           this.store.movieList = result.data.results;
@@ -35,11 +35,12 @@ import axios from 'axios';
       this.getApiMovie()
     }
   }
+  
 </script>
 
 
 <template>
-  <Header @starSearch="getApiMovie"/>
+  <Header @startSearch="getApiMovie"/>
   <Main />
   <Footer />
 </template>
