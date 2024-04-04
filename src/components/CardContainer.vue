@@ -10,6 +10,10 @@ import { store } from '../assets/data/store';
       Cards,
     },
 
+    props:{
+      type: String,
+    },
+
     data(){
       return{
         store,
@@ -29,7 +33,8 @@ import { store } from '../assets/data/store';
   <div class="container text-center">
     <h3>{{ title }}</h3>
     <div class="row row-col-4">
-      <Cards v-for="item in this.store[type]" :key="item.id"
+      <!-- passo tutto l'oggetto perchè serie tv hanno 'nome', film hanno 'titolo' -->
+      <Cards v-for="item in this.store[type]" :key="item.id" :cardObj="item"
                 :title="item.title"
                 :originalTitle="item.original_title"
                 :originalLanguage="item.original_language"
