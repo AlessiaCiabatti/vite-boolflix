@@ -2,6 +2,7 @@ import { reactive } from "vue"
 
 export const store = reactive({
   apiUrl: 'https://api.themoviedb.org/3/search/',
+  imgUrlBase: 'https://image.tmdb.org/t/p/w500',
   queryParams:{
     query: '',
     language: 'it-IT',
