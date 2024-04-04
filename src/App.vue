@@ -19,6 +19,7 @@ import axios from 'axios';
         store,
       }
     },
+    
     methods:{
       getApi(type){
         axios.get(this.store.apiUrl + type, {
@@ -31,22 +32,14 @@ import axios from 'axios';
           
         })
       },
-      // getApiSeries(){
-      //   axios.get(this.store.apiUrlMovie + 'tv', {
-      //     params: store.queryParams
-      //   })
-      //   .then(result =>{
-      //     console.log(result.data.results);
-      //     this.store.movieList = result.data.results;
-      //     console.log(this.store.movieList);
-          
-      //   })
-      // },
+      startSearch(){
+        this.getApi('movie');
+        this.getApi('tv');
+      }
     },
 
     mounted(){
-      this.getApi('movieList');
-      this.getApi('movieSeries');
+      this.startSearch()
     }
   }
   
@@ -54,9 +47,9 @@ import axios from 'axios';
 
 
 <template>
-  <Header @startSearch="getApi('movieList')"/>
-  <CardContainer type="movie" />
-  <CardContainer type="tv" />
+  <Header @startSearch="startSearch"/>
+  <CardContainer type="movie" v-if="store.movie.length > 0" />
+  <CardContainer type="tv" v-if="store.tv.length > 0"/>
   <Footer />
 </template>
 

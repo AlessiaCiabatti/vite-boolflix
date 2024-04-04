@@ -19,14 +19,14 @@ import { store } from '../../assets/data/store';
 
 <template>
  
-  <div class="col mt-5">
-    <div class="card text-center" style="width: 18rem;">
+  <div class="col">
+    <div class="card card mb-3" style="width: 18rem;">
       <div class="card-body">
         <!-- serie tv hanno 'nome', film hanno 'titolo' allora se voglio stampare una delle due proprietà uso || -->
         <h4 class="card-title">{{cardObj.title || cardObj.name}}</h4>
-        <h5 class="card-subtitle mb-2 text-body-secondary">{{ cardObj.originalTitle || cardObj.name}}</h5>
-        <p>{{cardObj.originalLanguage}}</p>
-        <p>{{cardObj.voteAverage}}</p>
+        <h5 class="card-subtitle mb-2 text-body-secondary">{{ cardObj.original_title || cardObj.name}}</h5>
+        <p class="card-text">{{cardObj.original_language}}</p>
+        <p class="card-text">{{cardObj.vote_average.toFixed(1)}}</p>
         <!-- <a href="#" class="card-link">Card link</a>
         <a href="#" class="card-link">Another link</a> -->
       </div>

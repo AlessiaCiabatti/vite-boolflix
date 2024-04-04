@@ -6,17 +6,8 @@ import { store } from '../assets/data/store';
     data(){
       return{
         store,
-        nameToSearch: '',
       }
     },
-    methods:{
-      startSearch(){
-        this.store.queryParams= {
-          query: this.nameToSearch 
-        }
-        this.$emit('startSearch')
-      }
-    }
   }
 </script>
 
@@ -28,10 +19,11 @@ import { store } from '../assets/data/store';
   <div class="container-fluid">
     <a class="navbar-brand">BOOLFLIX</a>
     <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-      v-model.trim="nameToSearch"
-      @submit.prevent="startSearch">
-      <button class="btn btn-outline-success" type="submit">Search</button>
+      <input
+      v-model.trim="this.store.queryParams.query"
+      class="form-control me-2" type="text" placeholder="Cerca un film">
+
+      <button @click="$emit('startSearch')" class="btn btn-primary">Search</button>
     </form>
   </div>
 </nav>
