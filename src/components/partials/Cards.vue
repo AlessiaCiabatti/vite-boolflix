@@ -25,7 +25,15 @@ import { store } from '../../assets/data/store';
         <!-- serie tv hanno 'nome', film hanno 'titolo' allora se voglio stampare una delle due proprietà uso || -->
         <h4 class="card-title">{{cardObj.title || cardObj.name}}</h4>
         <h5 class="card-subtitle mb-2 text-body-secondary">{{ cardObj.original_title || cardObj.name}}</h5>
-        <p class="card-text">{{cardObj.original_language}}</p>
+        <div v-if="cardObj.original_language === 'en'">
+          <img src="../../assets/img/en.png" alt="">
+        </div>
+        <div v-else-if="cardObj.original_language === 'it'">
+          <img src="../../assets/img/it.png" alt="">
+        </div>
+        <div v-else>
+          <p class="card-text">{{cardObj.original_language}}</p>
+        </div>
         <p class="card-text">{{cardObj.vote_average.toFixed(1)}}</p>
         <!-- <a href="#" class="card-link">Card link</a>
         <a href="#" class="card-link">Another link</a> -->
@@ -35,5 +43,11 @@ import { store } from '../../assets/data/store';
 </template>
 
 <style lang="scss">
+
+.card{
+  img{
+    height: 50px;
+  }
+}
 
 </style>
