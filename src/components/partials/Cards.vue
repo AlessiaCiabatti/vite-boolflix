@@ -1,17 +1,27 @@
 
 <script>
+import { store } from '../../assets/data/store';
+
   export default {
     props:{
+      type: String,
       title: String,
       originalTitle: String,
       originalLanguage: String,
       voteAverage: Number,
-    }
+    },
+    data(){
+      return{
+        store,
+      }
+    },
+   
   }
 </script>
 
 
 <template>
+ 
   <div class="col mt-5">
     <div class="card text-center" style="width: 18rem;">
       <div class="card-body">
