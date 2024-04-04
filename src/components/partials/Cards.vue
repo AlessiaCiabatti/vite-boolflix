@@ -1,6 +1,9 @@
 <script>
 import { store } from '../../assets/data/store';
 
+import '@fortawesome/fontawesome-free/css/all.css';
+import '@fortawesome/fontawesome-free/js/all.js';
+
   export default {
     props:{
       // passo tutto l'oggetto perchè serie tv hanno 'nome', film hanno 'titolo'
@@ -9,6 +12,11 @@ import { store } from '../../assets/data/store';
     data(){
       return{
         store,
+      }
+    },
+    methods:{
+      voteStar(){
+        return Math.ceil(this.cardObj.vote_average / 2)
       }
     },
    
@@ -36,9 +44,15 @@ import { store } from '../../assets/data/store';
         <div v-else>
           <p class="card-text">{{cardObj.original_language}}</p>
         </div>
+        <div>
+          <i v-for="n in voteStar()" :key="n" class="fa-solid fa-star"></i>
+        <i
+          v-for="n in 5 - voteStar()"
+          :key="n"
+          class="fa-regular fa-star">
+        </i>
+        </div>
         <p class="card-text">{{cardObj.vote_average.toFixed(1)}}</p>
-        <!-- <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a> -->
       </div>
     </div>
   </div>
