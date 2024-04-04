@@ -1,4 +1,3 @@
-
 <script>
 import { store } from '../../assets/data/store';
 
@@ -22,6 +21,9 @@ import { store } from '../../assets/data/store';
   <div class="col">
     <div class="card card mb-3" style="width: 18rem;">
       <div class="card-body">
+        <div>
+          <img :src="this.store.imgUrlBase + cardObj.poster_path" alt="Image">
+        </div>
         <!-- serie tv hanno 'nome', film hanno 'titolo' allora se voglio stampare una delle due proprietà uso || -->
         <h4 class="card-title">{{cardObj.title || cardObj.name}}</h4>
         <h5 class="card-subtitle mb-2 text-body-secondary">{{ cardObj.original_title || cardObj.name}}</h5>
