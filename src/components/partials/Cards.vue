@@ -64,7 +64,14 @@ import '@fortawesome/fontawesome-free/js/all.js';
             </div>
           </div>
 
-          <img class="img-cover" :src="this.store.imgUrlBase + cardObj.poster_path" alt="Image">
+          <div v-if="cardObj.poster_path === null">
+            <img class="img-cover" src="../../assets/img/not-found.jpg" alt="">
+          </div>
+
+          <div v-else>
+            <img class="img-cover" :src="this.store.imgUrlBase + cardObj.poster_path" alt="Image">
+          </div>
+        
 
         </div>
 
@@ -84,6 +91,11 @@ import '@fortawesome/fontawesome-free/js/all.js';
   border: none;
   .card-body {
     padding: 0px;
+    &:hover{
+        .card_text{
+        display: block;
+        }
+      }
     .img-container{
       position: relative;
       .img-cover{
@@ -98,6 +110,7 @@ import '@fortawesome/fontawesome-free/js/all.js';
       position: absolute;
       width: 100%;
       height: 430px;
+      display: none;
 
       .overview{
         overflow: auto;
