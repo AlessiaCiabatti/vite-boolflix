@@ -30,12 +30,14 @@ import { store } from '../assets/data/store';
 
 
 <template>
-  <div class="container text-center my-5">
-    <h3>{{ title }}</h3>
-    <div class="row row-cols-6">
-      <!-- passo tutto l'oggetto perchè serie tv hanno 'nome', film hanno 'titolo' -->
-      <Cards v-for="item in this.store[type]" :key="item.id" :cardObj="item"
-              />
+  <div class="bg">
+    <div class="container text-center my-5">
+      <h3 class="text-white">{{ title }}</h3>
+      <div class="row row-cols-6">
+        <!-- passo tutto l'oggetto perchè serie tv hanno 'nome', film hanno 'titolo' -->
+        <Cards v-for="item in this.store[type]" :key="item.id" :cardObj="item"
+                />
+      </div>
     </div>
   </div>
 
@@ -43,7 +45,13 @@ import { store } from '../assets/data/store';
 
 
 <style lang="scss">
+
+@use '../assets/scss/partials/variables' as *;
+
 .container.text-center {
     max-width: 95%;
+    h3{
+      text-align: left;
+    }
 }
 </style>

@@ -15,7 +15,7 @@ import { store } from '../assets/data/store';
 
 <template>
 
-<nav class="navbar bg-body-tertiary">
+<nav class="navbar">
   <div class="container-fluid">
     <a class="navbar-brand">BOOLFLIX</a>
     <div class="d-flex" role="search">
@@ -32,5 +32,12 @@ import { store } from '../assets/data/store';
 
 
 <style lang="scss">
+
+@use '../assets/scss/partials/variables' as *;
+  a.navbar-brand{
+    color: $logo-color;
+    font-weight: bold;
+  }
+
 
 </style>
