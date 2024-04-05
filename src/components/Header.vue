@@ -34,10 +34,14 @@ import { store } from '../assets/data/store';
 <style lang="scss">
 
 @use '../assets/scss/partials/variables' as *;
+nav.navbar{
+  height: 85px;
   a.navbar-brand{
     color: $logo-color;
     font-weight: bold;
+    
   }
+}
 
 
 </style>

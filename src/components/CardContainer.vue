@@ -31,7 +31,7 @@ import { store } from '../assets/data/store';
 
 <template>
   <div class="bg">
-    <div class="container text-center my-5">
+    <div class="container text-center mt-5">
       <h3 class="text-white">{{ title }}</h3>
       <div class="row row-cols-6">
         <!-- passo tutto l'oggetto perchè serie tv hanno 'nome', film hanno 'titolo' -->

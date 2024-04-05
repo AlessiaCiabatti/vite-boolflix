@@ -1,7 +1,7 @@
 <script>
 import Header from './components/Header.vue';
 import CardContainer from './components/CardContainer.vue';
-import Footer from './components/Footer.vue';
+import Background from './components/Background.vue';
 
 // store
 import {store} from './assets/data/store';
@@ -11,7 +11,7 @@ import axios from 'axios';
     components:{
       Header,
       CardContainer,
-      Footer,
+      Background,
     },
     
     data(){
@@ -50,7 +50,7 @@ import axios from 'axios';
   <Header @startSearch="startSearch"/>
   <CardContainer type="movie" v-if="store.movie.length > 0" />
   <CardContainer type="tv" v-if="store.tv.length > 0"/>
-  <Footer />
+  <Background v-if="store.movie.length == 0" />
 </template>
 
 
