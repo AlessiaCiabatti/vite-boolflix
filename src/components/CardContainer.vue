@@ -32,7 +32,7 @@ import { store } from '../assets/data/store';
 <template>
   <div class="container text-center my-5">
     <h3>{{ title }}</h3>
-    <div class="row row-cols-4">
+    <div class="row row-cols-6">
       <!-- passo tutto l'oggetto perchè serie tv hanno 'nome', film hanno 'titolo' -->
       <Cards v-for="item in this.store[type]" :key="item.id" :cardObj="item"
               />
