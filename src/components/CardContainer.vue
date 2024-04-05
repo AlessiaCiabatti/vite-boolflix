@@ -43,5 +43,7 @@ import { store } from '../assets/data/store';
 
 
 <style lang="scss">
-
+.container.text-center {
+    max-width: 95%;
+}
 </style>
