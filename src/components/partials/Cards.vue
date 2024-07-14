@@ -16,7 +16,7 @@ import '@fortawesome/fontawesome-free/js/all.js';
     },
     methods:{
       voteStar(){
-        return Math.ceil(this.cardObj.vote_average / 2)
+        return Math.ceil(this.cardObj.vote_average / 2);
       }
     },
    
